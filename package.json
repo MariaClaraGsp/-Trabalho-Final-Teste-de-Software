@@ -1,0 +1,27 @@
+{
+  "name": "-trabalho-final-teste-de-software",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariaClaraGsp/-Trabalho-Final-Teste-de-Software.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MariaClaraGsp/-Trabalho-Final-Teste-de-Software/issues"
+  },
+  "homepage": "https://github.com/MariaClaraGsp/-Trabalho-Final-Teste-de-Software#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.1.0"
+  }
+}
