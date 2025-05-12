@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -16,12 +17,12 @@
     "url": "https://github.com/MariaClaraGsp/-Trabalho-Final-Teste-de-Software/issues"
   },
   "homepage": "https://github.com/MariaClaraGsp/-Trabalho-Final-Teste-de-Software#readme",
-  "description": "",
   "dependencies": {
     "express": "^5.1.0"
   },
   "devDependencies": {
     "jest": "^29.7.0",
     "supertest": "^7.1.0"
-  }
+  },
+  "description": ""
 }
