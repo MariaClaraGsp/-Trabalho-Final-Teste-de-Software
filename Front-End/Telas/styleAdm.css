@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +10,6 @@ body {
   color: #000;
 }
 
-/* Barra superior */
 .barra-superior {
   background-color: #07b2d4;
   color: white;
@@ -45,7 +43,6 @@ body {
   margin-right: 5px;
 }
 
-/* Container de login */
 .container-login {
   display: flex;
   flex-direction: column;
@@ -63,7 +60,7 @@ h2 {
   font-size: 20px;
 }
 
-/* Formulário */
+
 .formulario-login {
   display: flex;
   flex-direction: column;
