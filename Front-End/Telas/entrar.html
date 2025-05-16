@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - PatSoft</title>
+  <link rel="stylesheet" href="styleEntrar.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="PatSoft Logo" />
+    </div>
+    <div class="secure-access">
+      <img src="lock-icon.png" alt="Cadeado" />
+      <span>acesso seguro</span>
+    </div>
+  </header>
+
+  <main class="login-container">
+    <img src="https://img.icons8.com/ios-filled/100/user.png" alt="Ícone de usuário" class="user-icon" />
+    <h2>Entrar</h2>
+    <form id="loginForm">
+      <input id="email" type="email" placeholder="E-mail" required />
+      <input id="senha" type="password" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
+    </form>
+    <p id="mensagem" style="color: red; margin-top: 10px;"></p>
+  </main>
+
+  <script src="/Back-End/src/entrar.js"></script>
+</body>
+</html>

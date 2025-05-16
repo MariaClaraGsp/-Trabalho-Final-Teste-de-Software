@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/MariaClaraGsp/-Trabalho-Final-Teste-de-Software#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1"
   },
   "devDependencies": {
     "jest": "^29.7.0",

@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+.barra-superior {
+  background-color: #07b2d4;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: orange;
+}
+
+.logo span {
+  color: orange;
+}
+
+.logo strong {
+  color: white;
+}
+
+.acesso-seguro {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.icone-cadeado {
+  margin-right: 5px;
+}
+
+.container-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 16px;
+}
+
+.avatar img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+
+.formulario-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+}
+
+.campo {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  background-color: #e0e0e0;
+  border: 2px solid #f9a825;
+  border-radius: 6px;
+  outline: none;
+}
+
+.botao-entrar {
+  width: 100%;
+  padding: 12px;
+  background-color: #f9a825;
+  color: white;
+  border: 2px dashed #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
