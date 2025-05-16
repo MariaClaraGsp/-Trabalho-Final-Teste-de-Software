@@ -19,9 +19,9 @@ document.getElementById("form-conta").addEventListener("submit", async function 
 
     const data = await response.json();
 
-    if (response.ok && data.sucesso) {
+    if (response.ok) {
       alert("Conta criada com sucesso!");
-    window.location.href = "cliente.html";
+    window.location.href = "/Front-End/pages/cliente.html";
     } else {
       mensagemEl.textContent = data.mensagem || "Erro ao criar conta.";
     }

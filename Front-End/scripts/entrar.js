@@ -20,7 +20,7 @@ document.getElementById("loginForm").addEventListener("submit", async function (
 
     if (response.ok && data.sucesso) {
       alert("Login bem-sucedido! Bem-vindo, " + data.usuario.nome);
-      window.location.href = "cliente.html";
+      window.location.href = "/Front-End/pages/cliente.html";
     } else {
       mensagemEl.textContent = data.mensagem || "Erro no login.";
     }
