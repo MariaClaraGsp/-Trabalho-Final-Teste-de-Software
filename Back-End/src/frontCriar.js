@@ -1,13 +1,15 @@
 document.getElementById("form-conta").addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  const formData = new FormData(this);
-  const nome = formData.get("nome");
-  const email = formData.get("email");
-  const senha = formData.get("senha");
+  const nome = document.querySelector('input[name="nome"]').value;
+  const email = document.querySelector('input[name="email"]').value;
+  const senha = document.querySelector('input[name="senha"]').value;
+  const mensagemEl = document.getElementById("mensagem");
+
+  mensagemEl.textContent = "";
 
   try {
-    const resposta = await fetch("http://localhost:3000/api/usuarios", {
+    const response = await fetch("http://192.168.1.10:3000/api/usuarios", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -15,15 +17,16 @@ document.getElementById("form-conta").addEventListener("submit", async function 
       body: JSON.stringify({ nome, email, senha })
     });
 
-    if (resposta.ok) {
+    const data = await response.json();
+
+    if (response.ok && data.sucesso) {
       alert("Conta criada com sucesso!");
-      this.reset();
+    window.location.href = "cliente.html";
     } else {
-      const erro = await resposta.json();
-      alert("Erro: " + erro.mensagem);
+      mensagemEl.textContent = data.mensagem || "Erro ao criar conta.";
     }
-  } catch (erro) {
-    console.error("Erro ao conectar com o servidor:", erro);
-    alert("Erro ao conectar com o servidor.");
+  } catch (error) {
+    console.error("Erro ao conectar com o servidor:", error);
+    mensagemEl.textContent = "Erro de conexão com o servidor.";
   }
 });

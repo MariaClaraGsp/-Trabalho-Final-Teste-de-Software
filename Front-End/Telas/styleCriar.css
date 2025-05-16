@@ -77,8 +77,8 @@ h2 {
 .botao {
   padding: 12px;
   background-color: #f9a825;
-  border: 2px dashed #ccc;
   color: white;
+  border: none;
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
