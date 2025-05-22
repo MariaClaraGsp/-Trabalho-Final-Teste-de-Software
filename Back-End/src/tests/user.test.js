@@ -1,5 +1,13 @@
 const request = require('supertest');
-const app = require('../server'); // ajuste o caminho conforme sua estrutura
+const { app, connectToDatabase, closeDatabaseConnection } = require('../app');
+
+beforeAll(async () => {
+  await connectToDatabase();
+});
+
+afterAll(async () => {
+  await closeDatabaseConnection();
+});
 
 describe('Teste da rota /ping', () => {
   it('Deve responder com status 200 e mensagem pong', async () => {
@@ -9,11 +17,6 @@ describe('Teste da rota /ping', () => {
   });
 });
 
-//supertest
-
 test('1 + 1 = 2', () => {
-
-expect(1 + 1).toBe(2);
-
+  expect(1 + 1).toBe(2);
 });
-//teste unitario

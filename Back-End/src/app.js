@@ -1,34 +1,61 @@
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2');
-const app = express();
 
+const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Coloque aqui o IP da máquina que roda o MySQL, ou 'localhost' se for o mesmo PC
-const MYSQL_HOST = '192.168.1.10'; // Removi o espaço extra aqui
+let connection;
 
-const connection = mysql.createConnection({
-  host: MYSQL_HOST,
-  user: 'root',
-  password: 'Amominhafamilia@123',
-  database: 'usuarios',
-  port: 3306
+// Função para conectar ao banco de dados
+function connectToDatabase() {
+  return new Promise((resolve, reject) => {
+    connection = mysql.createConnection({
+      host: '192.168.1.10',
+      user: 'root',
+      password: 'Amominhafamilia@123',
+      database: 'usuarios',
+      port: 3306
+    });
+
+    connection.connect((err) => {
+      if (err) {
+        console.error('Erro ao conectar ao MySQL:', err.stack);
+        reject(err);
+      } else {
+        console.log('Conectado ao MySQL como id ' + connection.threadId);
+        // Armazena a conexão no app para uso em rotas, se quiser
+        app.set('db', connection);
+        resolve(connection);
+      }
+    });
+  });
+}
+
+// Função para fechar conexão
+function closeDatabaseConnection() {
+  return new Promise((resolve, reject) => {
+    if (!connection) {
+      resolve();
+      return;
+    }
+    connection.end((err) => {
+      if (err) reject(err);
+      else resolve();
+    });
+  });
+}
+
+// Rota /ping para o teste
+app.get('/ping', (req, res) => {
+  res.status(200).json({ message: 'pong' });
 });
 
-connection.connect((err) => {
-  if (err) {
-    console.error('Erro ao conectar ao MySQL:', err.stack);
-    return;
-  }
-  console.log('Conectado ao MySQL como id ' + connection.threadId);
-});
+// Rotas da API
 
-// Rota para criar conta
 app.post("/api/usuarios", (req, res) => {
   const { nome, email, senha } = req.body;
-
   if (!nome || !email || !senha) {
     return res.status(400).json({ mensagem: "Todos os campos são obrigatórios." });
   }
@@ -44,10 +71,8 @@ app.post("/api/usuarios", (req, res) => {
   });
 });
 
-// ✅ Rota de login com verificação no banco de dados
 app.post("/api/login", (req, res) => {
   const { email, senha } = req.body;
-
   if (!email || !senha) {
     return res.status(400).json({ mensagem: "E-mail e senha são obrigatórios." });
   }
@@ -66,9 +91,19 @@ app.post("/api/login", (req, res) => {
     }
   });
 });
- 
 
-const PORT = 3000;
-app.listen(PORT, '192.168.1.10', () => {
-  console.log(`Servidor rodando em http://192.168.1.10:${PORT}`);
-});
+// Inicializa o servidor somente se o arquivo for executado diretamente
+if (require.main === module) {
+  connectToDatabase()
+    .then(() => {
+      const PORT = 3000;
+      app.listen(PORT, '192.168.1.10', () => {
+        console.log(`Servidor rodando em http://192.168.1.10:${PORT}`);
+      });
+    })
+    .catch((err) => {
+      console.error('Não foi possível iniciar o servidor:', err);
+    });
+}
+
+module.exports = { app, connectToDatabase, closeDatabaseConnection };
