@@ -1,5 +1,6 @@
 const request = require('supertest');
-const { app, connectToDatabase, closeDatabaseConnection } = require('../app');
+const app = require('../app'); // Corrigido aqui
+const { connectToDatabase, closeDatabaseConnection } = require('../db');
 
 beforeAll(async () => {
   await connectToDatabase();

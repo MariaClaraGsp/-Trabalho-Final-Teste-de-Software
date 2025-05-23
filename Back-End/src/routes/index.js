@@ -1,12 +1,10 @@
-//agrupador de rotas 
+import express from 'express';
+import cadastroRoute from './cadastro.js';
+import { router as loginRoute } from './login.js';
 
-const express = require('express');
 const router = express.Router();
-
-const cadastroRoute = require('./cadastro');
-const loginRoute = require('./login');
 
 router.use(cadastroRoute);
 router.use(loginRoute);
 
-module.exports = router;
+export default router;

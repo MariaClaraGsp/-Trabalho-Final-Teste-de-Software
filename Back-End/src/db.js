@@ -1,8 +1,8 @@
-const mysql = require('mysql2');
+import mysql from 'mysql2';
 
 let connection;
 
-function connectToDatabase() {
+export function connectToDatabase() {
   return new Promise((resolve, reject) => {
     connection = mysql.createConnection({
       host: '192.168.1.10',
@@ -24,11 +24,11 @@ function connectToDatabase() {
   });
 }
 
-function getConnection() {
+export function getConnection() {
   return connection;
 }
 
-function closeDatabaseConnection() {
+export function closeDatabaseConnection() {
   return new Promise((resolve, reject) => {
     if (!connection) {
       resolve();
@@ -40,5 +40,3 @@ function closeDatabaseConnection() {
     });
   });
 }
-
-module.exports = { connectToDatabase, getConnection, closeDatabaseConnection };

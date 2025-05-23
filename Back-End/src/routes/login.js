@@ -1,7 +1,10 @@
-const express = require('express');
-const router = express.Router();
-const { getConnection } = require('../db');
+// src/routes/login.js
+import express from 'express';
+import { getConnection } from '../db.js';
 
+const router = express.Router();
+
+// Rota POST /login
 router.post("/login", (req, res) => {
   const { email, senha } = req.body;
   if (!email || !senha) {
@@ -24,4 +27,16 @@ router.post("/login", (req, res) => {
   });
 });
 
-module.exports = router;
+// Função de login para testes (opcional)
+export async function fazerLogin(email, senha) {
+  const response = await fetch("http://192.168.1.10:3000/api/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, senha }),
+  });
+
+  const data = await response.json();
+  return { status: data.sucesso, data };
+}
+
+export { router };

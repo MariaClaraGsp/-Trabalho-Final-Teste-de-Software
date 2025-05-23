@@ -2,8 +2,9 @@
   "name": "-trabalho-final-teste-de-software",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "start": "node server.js"
   },
   "repository": {
@@ -21,12 +22,14 @@
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "mysql2": "^3.14.1"
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.27.2",
+    "babel-jest": "^29.7.0",
     "jest": "^29.7.0",
+    "mysql2": "^3.14.1",
     "supertest": "^7.1.0"
   },
   "description": ""
-
 }
