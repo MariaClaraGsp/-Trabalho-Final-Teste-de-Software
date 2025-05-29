@@ -7,7 +7,6 @@ const router = express.Router();
 router.post('/', (req, res) => {
     const { nome, valor, descricao, categoria } = req.body;
 
-  // Verifica se todos os campos foram fornecidos
   if (!nome || !valor || !descricao || !categoria) {
     return res.status(400).json({ mensagem: "Todos os campos são obrigatórios." });
   }
@@ -15,7 +14,6 @@ router.post('/', (req, res) => {
   let connection;
   try {
     connection = getConnection();
-
     if (!connection) {
       return res.status(500).json({ mensagem: "Erro ao conectar ao banco de dados." });
     }
@@ -39,7 +37,7 @@ router.post('/', (req, res) => {
     });
 
   } catch (erro) {
-    console.error('Exceção ao salvar usuário:', erro);
+    console.error('Exceção ao salvar produto:', erro);
     return res.status(500).json({ mensagem: "Erro interno do servidor." });
   }
 
@@ -49,7 +47,6 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
 
   const connection = getConnection();
-
   if (!connection) {
     return res.status(500).json({ mensagem: "Erro ao conectar ao banco de dados." });
   }
@@ -71,13 +68,52 @@ router.get('/produtos/:id', (req, res) => {
 });
 
 //Atualizar um produto pelo id aqui
-router.put('/produtos/:id', (req, res) => {
-  res.send(`Atualizar produto com id ${req.params.id}`);
+router.put('/:nome', (req, res) => {
+
+  const { nome } = req.params;
+  const { valor, descricao, categoria } = req.body;
+
+  const connection = getConnection();
+  if (!connection) {
+    return res.status(500).json({ mensagem: "Erro ao conectar ao banco de dados." });
+  }
+
+  const atualizarProduto = ` UPDATE produtos SET valor = ?, descricao = ?, categoria = ? WHERE nome = ?`;
+
+  connection.query( atualizarProduto, [valor, descricao, categoria, nome], (error, resultado) => {
+      if (error) {
+        console.error('Erro ao atualizar produto:', error);
+        return res.status(500).json({ erro: 'Erro ao atualizar produto' });
+      }
+
+      if (resultado.affectedRows === 0) {
+        return res.status(404).json({ mensagem: 'Produto não encontrado.' });
+      }
+
+      return res.status(200).json({ mensagem: 'Produto atualizado com sucesso.' });
+    }
+  );
 });
 
- //lógica para deletar um produto pelo id aqui
-router.delete('/produtos/:id', (req, res) => {
-  res.send(`Deletar produto com id ${req.params.id}`);
+
+ //lógica para deletar um produto pelo nome aqui
+router.delete('/:nome', (req, res) => {
+
+    const { nome } = req.params;
+
+    const connection = getConnection();
+    if (!connection) {
+      return res.status(500).json({ mensagem: "Erro ao conectar ao banco de dados." });
+    }
+
+    const deletarProduto = 'DELETE FROM produtos WHERE nome = ?'
+
+    connection.query(deletarProduto, [nome], (error, resultado) => {
+        if(error){
+            return res.json(error);
+        }
+        return res.status(200).json({ message: 'Produto deletado com sucesso', resultado})
+    })
 });
 
 export default router;
