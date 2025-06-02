@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meu Carrinho</title>
+  <link rel="stylesheet" href="../styles/carrinho.css" />
+</head>
+<body>
+  <header class="navbar">
+    <img src="logo.png" alt="Logo" class="logo" />
+    <input type="text" class="search" placeholder="Buscar produtos..." />
+    <div class="icons">
+      <div class="icon" onclick="location.href='perfiTela.html'">
+        <img src="user.png" alt="Perfil" style="width: 24px; height: 24px;">
+      </div>
+      <div class="icon" onclick="location.href='fidelidadeTela.html'">
+        <img src="paw.png" alt="Fidelidade" style="width: 24px; height: 24px;">
+      </div>
+      <div class="icon" onclick="location.href='carrinho.html'">
+        <img src="cart.png" alt="Carrinho" style="width: 24px; height: 24px;">
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="titulo">Meu Carrinho</h2>
+
+    <div class="card-carrinho">
+      <p class="loja">Pat Soft (1 item)</p>
+      <div class="conteudo">
+        <div class="img-produto"></div>
+        <div class="info-produto">
+          <div class="topo">
+            <h3>nome do produto</h3>
+            <span class="remover" title="Remover item">
+              <img src="lixeira.png" alt="Remover" width="20">
+            </span>
+          </div>
+          <p class="preco">R$59,90</p>
+          <p class="descricao">
+            Descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição
+          </p>
+          <p class="avaliacao">Avaliação: 4.6</p>
+          <p class="vendidos">5 produtos vendidos</p>
+
+          <div class="quantidade">
+            <button onclick="alterarQuantidade(-1)">-</button>
+            <span id="quantidade">1</span>
+            <button onclick="alterarQuantidade(1)">+</button>
+          </div>
+
+          <div class="selecionar-produto">
+            <input type="checkbox" id="selecionado" />
+            <label for="selecionado">Selecionar este produto</label>
+          </div>
+
+          <button class="btn-comprar" onclick="comprarProduto()">Comprar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let quantidade = 1;
+
+    function alterarQuantidade(delta) {
+      quantidade += delta;
+      if (quantidade < 1) quantidade = 1;
+      document.getElementById("quantidade").innerText = quantidade;
+    }
+
+    function comprarProduto() {
+      const selecionado = document.getElementById("selecionado").checked;
+      if (!selecionado) {
+        alert("Por favor, selecione o produto que deseja comprar.");
+        return;
+      }
+
+      alert("Compra realizada com sucesso!\nQuantidade: " + quantidade);
+      // Aqui você pode redirecionar ou enviar dados para o backend
+    }
+  </script>
+</body>
+</html>

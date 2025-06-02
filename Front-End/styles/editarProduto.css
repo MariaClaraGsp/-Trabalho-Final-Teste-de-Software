@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: #FCAE33;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  height: 55px;
+}
+
+.search {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 20px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+}
+
+.icons {
+  display: flex;
+  gap: 12px;
+}
+
+.icon {
+  font-size: 22px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.icon:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: #f2f2f2;
+}
+
+.banner-img {
+  width: 90%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cadastro-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.titulo {
+  text-align: center;
+  color: #fcae33;
+  margin-bottom: 30px;
+}
+
+.form-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.imagem-upload .placeholder-img {
+  width: 300px;
+  height: 300px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+.form-produto {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.form-produto input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.form-produto button {
+  margin-top: 10px;
+  background-color: #00bcd4;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-produto button:hover {
+  background-color: #FCAE33;
+  transform: scale(0.95);
+}

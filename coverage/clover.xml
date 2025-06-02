@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1747976764065" clover="3.2.0">
+  <project timestamp="1747976764066" name="All files">
+    <metrics statements="61" coveredstatements="53" conditionals="27" coveredconditionals="24" methods="13" coveredmethods="11" elements="101" coveredelements="88" complexity="0" loc="61" ncloc="61" packages="2" files="5" classes="5"/>
+    <package name="src">
+      <metrics statements="22" coveredstatements="17" conditionals="6" coveredconditionals="3" methods="8" coveredmethods="7"/>
+      <file name="app.js" path="C:\Users\Pichau\OneDrive\Documentos\-Trabalho-Final-Teste-de-Software\Back-End\src\app.js">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+      </file>
+      <file name="db.js" path="C:\Users\Pichau\OneDrive\Documentos\-Trabalho-Final-Teste-de-Software\Back-End\src\db.js">
+        <metrics statements="16" coveredstatements="11" conditionals="6" coveredconditionals="3" methods="7" coveredmethods="6"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="39" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.routes">
+      <metrics statements="39" coveredstatements="36" conditionals="21" coveredconditionals="21" methods="5" coveredmethods="4"/>
+      <file name="cadastro.js" path="C:\Users\Pichau\OneDrive\Documentos\-Trabalho-Final-Teste-de-Software\Back-End\src\routes\cadastro.js">
+        <metrics statements="19" coveredstatements="19" conditionals="13" coveredconditionals="13" methods="2" coveredmethods="2"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="11" count="6" type="cond" truecount="5" falsecount="0"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="19" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="26" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="31" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+      </file>
+      <file name="index.js" path="C:\Users\Pichau\OneDrive\Documentos\-Trabalho-Final-Teste-de-Software\Back-End\src\routes\index.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+      </file>
+      <file name="login.js" path="C:\Users\Pichau\OneDrive\Documentos\-Trabalho-Final-Teste-de-Software\Back-End\src\routes\login.js">
+        <metrics statements="17" coveredstatements="14" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="2"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="22" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

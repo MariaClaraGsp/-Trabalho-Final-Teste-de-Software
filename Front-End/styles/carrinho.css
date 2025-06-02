@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: #FCAE33;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  height: 55px;
+}
+
+.search {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 20px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+}
+
+.icons {
+  display: flex;
+  gap: 12px;
+}
+
+.icon {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.icon:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.titulo {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.card-carrinho {
+  background-color: #d9d9d9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.loja {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.conteudo {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.img-produto {
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.info-produto {
+  flex: 1;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topo h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.remover {
+  cursor: pointer;
+}
+
+.preco {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.descricao {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.avaliacao,
+.vendidos {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.quantidade {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.quantidade button {
+  padding: 4px 12px;
+  font-size: 16px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.quantidade span {
+  font-size: 16px;
+}
+
+.selecionar-produto {
+  margin: 10px 0;
+}
+
+.btn-comprar {
+  background-color: #00bcd4;
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-comprar:hover {
+  background-color: #fcae33;
+  transform: scale(0.98);
+}
