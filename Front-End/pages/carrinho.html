@@ -8,20 +8,22 @@
 </head>
 <body>
   <header class="navbar">
-    <img src="logo.png" alt="Logo" class="logo" />
+    <img src="../assets/Img/logo.png" alt="Logo" class="logo" />
     <input type="text" class="search" placeholder="Buscar produtos..." />
     <div class="icons">
       <div class="icon" onclick="location.href='perfiTela.html'">
-        <img src="user.png" alt="Perfil" style="width: 24px; height: 24px;">
+        👤
       </div>
       <div class="icon" onclick="location.href='fidelidadeTela.html'">
-        <img src="paw.png" alt="Fidelidade" style="width: 24px; height: 24px;">
+       🐾
       </div>
       <div class="icon" onclick="location.href='carrinho.html'">
-        <img src="cart.png" alt="Carrinho" style="width: 24px; height: 24px;">
+        🛒
       </div>
     </div>
   </header>
+
+  </div>
 
   <main class="container">
     <h2 class="titulo">Meu Carrinho</h2>
@@ -34,7 +36,7 @@
           <div class="topo">
             <h3>nome do produto</h3>
             <span class="remover" title="Remover item">
-              <img src="lixeira.png" alt="Remover" width="20">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
             </span>
           </div>
           <p class="preco">R$59,90</p>
@@ -61,25 +63,6 @@
     </div>
   </main>
 
-  <script>
-    let quantidade = 1;
-
-    function alterarQuantidade(delta) {
-      quantidade += delta;
-      if (quantidade < 1) quantidade = 1;
-      document.getElementById("quantidade").innerText = quantidade;
-    }
-
-    function comprarProduto() {
-      const selecionado = document.getElementById("selecionado").checked;
-      if (!selecionado) {
-        alert("Por favor, selecione o produto que deseja comprar.");
-        return;
-      }
-
-      alert("Compra realizada com sucesso!\nQuantidade: " + quantidade);
-      // Aqui você pode redirecionar ou enviar dados para o backend
-    }
-  </script>
+  <script src="../scripts/carrinhoscript.js"></script>
 </body>
 </html>

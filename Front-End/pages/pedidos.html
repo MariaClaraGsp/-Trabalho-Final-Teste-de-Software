@@ -12,10 +12,11 @@
       <div class="logo">
         <img src="../assets/img/logo.png" alt="Logo Pet Shop" />
       </div>
- <div class="search-bar">
-      <input type="text" placeholder="Buscar...">
-      <button>🔍</button>
-    </div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar...">
+        <button>🔍</button>
+      </div>
 
       <div class="icons">
         <button class="icon-button" id="profileBtn" aria-label="Perfil">👤</button>
@@ -43,27 +44,12 @@
 
   <main>
     <section class="categories">
-  <div class="category">
-    <div class="icon">🍖</div>
-    <span>Alimentação</span>
-  </div>
-  <div class="category">
-    <div class="icon">💊</div>
-    <span>Medicamentos</span>
-  </div>
-  <div class="category">
-    <div class="icon">🧼</div>
-    <span>Higiene</span>
-  </div>
-  <div class="category">
-    <div class="icon">🧸</div>
-    <span>Brinquedos</span>
-  </div>
-  <div class="category">
-    <div class="icon">🎀</div>
-    <span>Acessórios</span>
-  </div>
-</section>
+      <div class="category">Alimentação</div>
+      <div class="category">Medicamentos</div>
+      <div class="category">Higiene</div>
+      <div class="category">Brinquedos</div>
+      <div class="category">Acessórios</div>
+    </section>
 
     <section class="highlight">
       <p>Entrega Concluída e a Descrição</p>
@@ -80,6 +66,9 @@
     </section>
   </main>
 
+  <div id="pedidosContainer" style="display: none;"></div>
+
+  <div id="carrinhoContainer" style="display: none;"></div>
   <script src="../scripts/principaljs.js"></script>
 </body>
 </html>
