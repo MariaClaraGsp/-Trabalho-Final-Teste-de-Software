@@ -15,7 +15,6 @@ function comprarProduto() {
   }
 
   alert("Compra realizada com sucesso!\nQuantidade: " + quantidade);
-  // Aqui você pode redirecionar ou enviar dados para o backend
 }
 
 let quantity = 1;
