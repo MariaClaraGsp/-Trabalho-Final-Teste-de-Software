@@ -6,7 +6,7 @@ import { router as loginRoute } from './login.js';
 
 const router = express.Router();
 
-router.use(cadastroRoute);
+router.use('/clientes',cadastroRoute);
 router.use(loginRoute);
 router.use('/produtos',produtosRoute);
 

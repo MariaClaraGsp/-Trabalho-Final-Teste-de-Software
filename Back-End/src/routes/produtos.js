@@ -3,11 +3,11 @@ import { getConnection } from '../db.js';
 
 const router = express.Router();
 
- // Cadastro de produto aqui
+ // Cadastro de produto aqui OK
 router.post('/', (req, res) => {
-    const { nome, valor, descricao, categoria } = req.body;
+    const { nome, valor, descricao, categoria, estoque } = req.body;
 
-  if (!nome || !valor || !descricao || !categoria) {
+  if (!nome || !valor || !descricao || !categoria || !estoque) {
     return res.status(400).json({ mensagem: "Todos os campos são obrigatórios." });
   }
 
@@ -18,9 +18,9 @@ router.post('/', (req, res) => {
       return res.status(500).json({ mensagem: "Erro ao conectar ao banco de dados." });
     }
 
-    const query = 'INSERT INTO produtos (nome, valor, descricao, categoria) VALUES (?, ?, ?, ?)';
+    const query = 'INSERT INTO produtos (nome, valor, descricao, categoria, estoque) VALUES (?, ?, ?, ?, ?)';
     
-    connection.execute(query, [nome, valor, descricao, categoria], (err, results) => {
+    connection.execute(query, [nome, valor, descricao, categoria, estoque], (err, results) => {
       if (err) {
         console.error('Erro ao salvar usuário:', err);
         return res.status(500).json({ mensagem: "Erro ao salvar produto." });
@@ -43,7 +43,7 @@ router.post('/', (req, res) => {
 
 });
 
- //Listagem de todos os produtos aqui
+ //Listagem de todos os produtos OK
 router.get('/', (req, res) => {
 
   const connection = getConnection();
@@ -62,25 +62,56 @@ router.get('/', (req, res) => {
   
 });
 
-//Buscar um produto pelo id aqui
-router.get('/produtos/:id', (req, res) => {
-  res.send(`Buscar produto com id ${req.params.id}`);
+// Buscar produto por nome OK
+router.get('/nome/:nome', (req, res) => {
+  const connection = getConnection();
+  if (!connection) {
+    return res.status(500).json({ mensagem: "Erro ao conectar ao banco de dados." });
+  }
+
+  const nome = req.params.nome;
+  connection.query('SELECT * FROM produtos WHERE nome = ?', [nome], (err, results) => {
+    if (err) {
+      console.error('Erro na consulta:', err);
+      return res.status(500).json({ error: err.message });
+    }
+
+    res.status(200).json(results);
+  });
 });
 
-//Atualizar um produto pelo id aqui
-router.put('/:nome', (req, res) => {
+// Buscar produto por categoria OK
+router.get('/categoria/:categoria', (req, res) => {
+  const connection = getConnection();
+  if (!connection) {
+    return res.status(500).json({ mensagem: "Erro ao conectar ao banco de dados." });
+  }
 
-  const { nome } = req.params;
-  const { valor, descricao, categoria } = req.body;
+  const categoria = req.params.categoria;
+  connection.query('SELECT * FROM produtos WHERE categoria = ?', [categoria], (err, results) => {
+    if (err) {
+      console.error('Erro na consulta:', err);
+      return res.status(500).json({ error: err.message });
+    }
+
+    res.status(200).json(results);
+  });
+});
+
+//Atualizar um produto pelo id aqui OK
+router.put('/:id', (req, res) => {
+
+  const { id } = req.params;
+  const { nome, valor, descricao, categoria, estoque } = req.body;
 
   const connection = getConnection();
   if (!connection) {
     return res.status(500).json({ mensagem: "Erro ao conectar ao banco de dados." });
   }
 
-  const atualizarProduto = ` UPDATE produtos SET valor = ?, descricao = ?, categoria = ? WHERE nome = ?`;
+  const atualizarProduto = ` UPDATE produtos SET nome = ?, valor = ?, descricao = ?, categoria = ?, estoque = ? WHERE id_produtos = ?`;
 
-  connection.query( atualizarProduto, [valor, descricao, categoria, nome], (error, resultado) => {
+  connection.query( atualizarProduto, [nome, valor, descricao, categoria, estoque, id], (error, resultado) => {
       if (error) {
         console.error('Erro ao atualizar produto:', error);
         return res.status(500).json({ erro: 'Erro ao atualizar produto' });
@@ -96,7 +127,7 @@ router.put('/:nome', (req, res) => {
 });
 
 
- //lógica para deletar um produto pelo nome aqui
+ //lógica para deletar um produto pelo nome OK
 router.delete('/:nome', (req, res) => {
 
     const { nome } = req.params;
