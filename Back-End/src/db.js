@@ -8,7 +8,7 @@ export function connectToDatabase() {
       host: 'localhost',
       user: 'root',
       password: 'Amominhafamilia@123',
-      database: 'pata_soft',
+      database: 'PataSoft',
       port: 3306
     });
 

@@ -1,5 +1,5 @@
-export async function fazerLogin(email, senha) {
-  const response = await fetch("http://192.168.1.10:3000/api/login", {
+async function fazerLogin(email, senha) {
+  const response = await fetch("http://localhost:3000/api/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -11,8 +11,7 @@ export async function fazerLogin(email, senha) {
   return { status: response.ok, data };
 }
 
-// Código principal da página (formulário de login)
-if (typeof document !== "undefined") {
+document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("loginForm").addEventListener("submit", async function (e) {
     e.preventDefault();
 
@@ -26,13 +25,13 @@ if (typeof document !== "undefined") {
 
       if (status && data.sucesso) {
         alert("Login bem-sucedido! Bem-vindo, " + data.usuario.nome);
-        window.location.href = "/Front-End/pages/principal.html";
+        window.location.href = "/principal.html";
       } else {
-        mensagemEl.textContent = data.mensagem || "Erro no login.";
+        mensagemEl.textContent = data.mensagem || "E-mail ou senha incorretos.";
       }
     } catch (error) {
       console.error("Erro ao conectar com o servidor:", error);
       mensagemEl.textContent = "Erro de conexão com o servidor.";
     }
   });
-}
+});
