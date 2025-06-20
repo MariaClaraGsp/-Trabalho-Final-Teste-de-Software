@@ -45,14 +45,26 @@
         <div class="placeholder-img">adicionar img</div>
       </div>
       <form class="form-produto">
-        <input type="text" placeholder="digite o nome do produto">
-        <input type="text" placeholder="digite o valor do produto">
-        <input type="text" placeholder="digite a descrição do produto">
-        <input type="number" placeholder="quantidade de produtos no estoque">
-        <input type="password" placeholder="digite a senha de acesso">
-        <button type="submit">adicionar</button>
-      </form>
+  <input type="text" name="nome" placeholder="digite o nome do produto">
+  <input type="text" name="valor" placeholder="digite o valor do produto">
+  <input type="text" name="descricao" placeholder="digite a descrição do produto">
+
+  <select name="categoria" required>
+    <option value="" disabled selected>Selecione a categoria</option>
+    <option value="Alimentação">Alimentação</option>
+    <option value="Higiene">Higiene</option>
+    <option value="Medicamentos">Medicamentos</option>
+    <option value="Brinquedos">Brinquedos</option>
+    <option value="Acessórios">Acessórios</option>
+  </select>
+
+  <input type="number" name="estoque" placeholder="Quantidade de produto para estoque">
+  <input type="password" name="senha" placeholder="digite a senha de acesso">
+  <button type="submit">adicionar</button>
+</form>
+
     </div>
   </main>
+  <script src="../scripts/cadastroProduto.js"></script>
 </body>
 </html>
