@@ -62,6 +62,24 @@ router.get('/', (req, res) => {
   
 });
 
+//Buscar produto por id para edição
+router.get('/id/:id', (req, res) => {
+  const connection = getConnection();
+  if (!connection) {
+    return res.status(500).json({ mensagem: "Erro ao conectar ao banco de dados." });
+  }
+
+  const id = req.params.id;
+  connection.query('SELECT * FROM produtos WHERE id_produtos = ?', [id], (err, results) => {
+    if (err) {
+      console.error('Erro na consulta:', err);
+      return res.status(500).json({ error: err.message });
+    }
+
+    res.status(200).json(results);
+  });
+});
+
 // Buscar produto por nome OK
 router.get('/nome/:nome', (req, res) => {
   const connection = getConnection();
@@ -127,19 +145,19 @@ router.put('/:id', (req, res) => {
 });
 
 
- //lógica para deletar um produto pelo nome OK
-router.delete('/:nome', (req, res) => {
+ //lógica para deletar um produto pelo id OK
+router.delete('/:id', (req, res) => {
 
-    const { nome } = req.params;
+    const { id } = req.params;
 
     const connection = getConnection();
     if (!connection) {
       return res.status(500).json({ mensagem: "Erro ao conectar ao banco de dados." });
     }
 
-    const deletarProduto = 'DELETE FROM produtos WHERE nome = ?'
+    const deletarProduto = 'DELETE FROM produtos WHERE id_produtos = ?'
 
-    connection.query(deletarProduto, [nome], (error, resultado) => {
+    connection.query(deletarProduto, [id], (error, resultado) => {
         if(error){
             return res.json(error);
         }
