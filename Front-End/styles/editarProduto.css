@@ -74,12 +74,9 @@ body {
   margin-bottom: 30px;
 }
 
-/* ---------------------------------------------------- */
-/* Novo CSS para a página de edição de produtos */
-/* ---------------------------------------------------- */
 
 .container-editar-produto {
-  max-width: 600px; /* Adapte a largura conforme necessário para o formulário */
+  max-width: 600px; 
   margin: 50px auto; /* Centraliza e adiciona espaço superior */
   padding: 30px;
   background-color: #ffffff;
@@ -90,7 +87,7 @@ body {
 #form-editar-produto {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Espaçamento entre os grupos de formulário */
+  gap: 15px; 
 }
 
 .form-group {
@@ -111,17 +108,17 @@ body {
   border-radius: 5px;
   border: 1px solid #ddd;
   font-size: 16px;
-  width: 100%; /* Ocupa a largura total do container */
+  width: 100%; 
 }
 
 .form-group textarea {
-  resize: vertical; /* Permite redimensionar verticalmente */
-  min-height: 80px; /* Altura mínima para a descrição */
+  resize: vertical; 
+  min-height: 80px; 
 }
 
 .btn-salvar {
-  margin-top: 20px; /* Espaço acima do botão */
-  background-color: #00bcd4; /* Cor primária, como no cadastro */
+  margin-top: 20px; 
+  background-color: #00bcd4; 
   color: white;
   padding: 12px 20px;
   border: none;
@@ -130,17 +127,17 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   align-self: center; /* Centraliza o botão dentro do flex container */
-  width: auto; /* Ajusta a largura ao conteúdo */
-  min-width: 180px; /* Largura mínima para o botão */
+  width: auto;
+  min-width: 180px; 
 }
 
 .btn-salvar:hover {
-  background-color: #FCAE33; /* Cor de hover como no cadastro */
-  transform: scale(0.98); /* Suavemente menor ao passar o mouse */
+  background-color: #FCAE33; 
+  transform: scale(0.98); 
 }
 
 .btn-voltar {
-    background-color: #6c757d; /* Uma cor neutra para o botão de voltar */
+    background-color: #6c757d; 
     color: white;
     padding: 8px 15px;
     border: none;
@@ -148,24 +145,24 @@ body {
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.2s;
-    margin-left: auto; /* Alinha à direita no navbar */
+    margin-left: auto; 
 }
 
 .btn-voltar:hover {
     background-color: #5a6268;
 }
 
-/* Ajustes para o cabeçalho para acomodar o botão Voltar */
+
 .navbar .titulo {
-    margin-bottom: 0; /* Remove margem inferior extra do título no navbar */
-    flex-grow: 1; /* Permite que o título ocupe espaço */
-    text-align: center; /* Centraliza o título */
+    margin-bottom: 0; 
+    flex-grow: 1; 
+    text-align: center; 
 }
 
-/* Ajustes para o botão de adicionar no produtosCadastrados.html para manter a consistência se ele aparecer no header */
+
 .navbar .btn-adicionar {
-    margin-left: auto; /* Alinha à direita */
-    background-color: #28a745; /* Uma cor para adicionar (verde) */
+    margin-left: auto; 
+    background-color: #28a745; 
     color: white;
     padding: 8px 15px;
     border: none;
@@ -179,9 +176,9 @@ body {
     background-color: #218838;
 }
 
-/* Garante que o cabeçalho se comporte bem */
+
 .navbar {
     display: flex;
     align-items: center;
-    gap: 15px; /* Espaçamento entre os elementos do navbar */
+    gap: 15px; 
 }

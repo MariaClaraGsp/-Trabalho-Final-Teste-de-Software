@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const descricaoInput = document.getElementById('descricao');
     const categoriaInput = document.getElementById('categoria');
     const estoqueInput = document.getElementById('estoque');
-    const apiUrl = 'http://localhost:3000/api/produtos'; // Altere para a URL correta da sua API
+    const apiUrl = 'http://localhost:3000/api/produtos'; 
 
     // Obter o ID do produto da URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -14,17 +14,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (!productId) {
         alert('ID do produto não encontrado na URL.');
-        window.location.href = 'produtosCadastrados.html'; // Redireciona de volta
+        window.location.href = 'produtosCadastrados.html'; 
         return;
     }
 
     // Função para carregar os dados do produto no formulário
     async function loadProductData(id) {
         try {
-            // Supondo que você tenha uma rota para buscar um produto por ID
-            // Se sua API só busca por nome ou categoria, você precisará adaptar ou adicionar uma rota de busca por ID
-            // Para simplificar, vou usar a rota de listagem e filtrar por ID no cliente (não ideal para muitos produtos)
-            // O ideal seria ter uma rota GET /api/produtos/:id
 
             const response = await fetch(`${apiUrl}`); // Busca todos os produtos
             if (!response.ok) {
@@ -56,7 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Lidar com o envio do formulário de edição
     formEditarProduto.addEventListener('submit', async (event) => {
-        event.preventDefault(); // Impede o envio padrão do formulário
+        event.preventDefault(); 
 
         const id = produtoIdInput.value;
         const produtoAtualizado = {
@@ -82,7 +78,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
 
             alert('Produto atualizado com sucesso!');
-            window.location.href = 'produtosCadastrados.html'; // Redireciona de volta para a lista
+            window.location.href = 'produtosCadastrados.html'; 
         } catch (error) {
             console.error('Erro ao atualizar produto:', error);
             alert('Erro ao atualizar produto. Verifique o console para mais detalhes.');

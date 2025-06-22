@@ -1,4 +1,3 @@
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -19,10 +18,9 @@ header {
 }
 
 .logo-img {
-  height: 60px; 
+  height: 60px;
   object-fit: contain;
 }
-
 
 .search-bar {
   flex-grow: 1;
@@ -49,6 +47,15 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.login-link { 
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+.login-link:hover {
+    text-decoration: underline;
 }
 
 
@@ -81,7 +88,7 @@ header {
   width: 90%;
   height: 200px;
   background-color: #ccc;
-  margin: 0 auto 30px auto;
+  margin: 20px auto 30px auto; 
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -92,18 +99,69 @@ header {
   margin-bottom: 20px;
 }
 
-.product-list {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 40px;
+
+.produtos-home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  gap: 20px; 
+  max-width: 1200px; 
+  margin: 0 auto 40px auto; 
+  padding: 0 20px; 
 }
 
 .product-card {
-  width: 180px;
-  height: 180px;
-  background-color: #ddd;
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 280px; 
+  justify-content: space-between; 
+}
+
+.product-card .imagem-produto { 
+  width: 100%;
+  height: 120px;
+  background-color: #eee; 
+  border-radius: 8px;
+  margin-bottom: 10px;
+  object-fit: cover; 
+}
+
+.product-card .nome-produto {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.product-card .valor-produto {
+  color: #f6a623; 
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.product-card .estoque-produto {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.product-card .btn-comprar {
+  background-color: #00a8cc; 
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  width: 100%; 
+}
+
+.product-card .btn-comprar:hover {
+  background-color: #008cba; 
 }
 

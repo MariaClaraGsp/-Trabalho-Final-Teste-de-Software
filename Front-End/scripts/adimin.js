@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const senha = document.querySelector('input[type="password"]').value;
 
     if (codigo === "admin" && senha === "1234") {
-      window.location.href = "produtosCadastrados.html";  // <-- Caminho relativo correto
+      window.location.href = "produtosCadastrados.html";  
     } else {
       alert("Código ou senha incorretos!");
     }

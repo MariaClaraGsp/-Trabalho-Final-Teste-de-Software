@@ -3,21 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loja Pet</title>
-  <!-- Caminho corrigido para o CSS -->
+  <title>Loja Pet</</title>
   <link rel="stylesheet" href="../styles/style.css" />
-</head>
+ </head>
 <body>
 
   <header>
     <div class="logo">
-      <!-- Caminho corrigido para imagem -->
       <img src="/assets/img/logo.png" alt="Logo PatSoft" class="logo-img" />
     </div>
     <div class="search-bar">
-      <input type="text" placeholder="Buscar..." />
-      <button>🔍</button>
-    </div>
+      <input type="text" id="searchInput" placeholder="Buscar produtos..." /> <button id="searchButton">🔍</button> </div>
     <div class="icons">
       <a href="/ClienteouAdministrador.html" class="login-link">Entrar ou criar conta</a>
       <div>👤</div>
@@ -27,38 +23,29 @@
   </header>
 
   <section class="categories">
-    <div class="category">
-      <div class="icon">🍖</div>
+    <div class="category" data-category="Alimentação"> <div class="icon">🍖</div>
       <span>Alimentação</span>
     </div>
-    <div class="category">
-      <div class="icon">💊</div>
+    <div class="category" data-category="Medicamentos"> <div class="icon">💊</div>
       <span>Medicamentos</span>
     </div>
-    <div class="category">
-      <div class="icon">🧼</div>
+    <div class="category" data-category="Higiene"> <div class="icon">🧼</div>
       <span>Higiene</span>
     </div>
-    <div class="category">
-      <div class="icon">🧸</div>
+    <div class="category" data-category="Brinquedos"> <div class="icon">🧸</div>
       <span>Brinquedos</span>
     </div>
-    <div class="category">
-      <div class="icon">🎀</div>
+    <div class="category" data-category="Acessórios"> <div class="icon">🎀</div>
       <span>Acessórios</span>
     </div>
   </section>
 
   <div class="banner"></div>
 
-  <h2 class="section-title">Mais pedidos</h2>
-
-  <div class="product-list">
-    <div class="product-card"></div>
-    <div class="product-card"></div>
-    <div class="product-card"></div>
-    <div class="product-card"></div>
+  <h2 class="section-title">Nossos Produtos</h2> <div class="produtos-home-grid">
+    <p>Carregando produtos...</p>
   </div>
 
+  <script src="../scripts/indexPgInicial.js"></script>
 </body>
 </html>
