@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Meus Pedidos</title>
+  <link rel="stylesheet" href="../styles/meusPedidosstyle.css">
+</head>
+<body>
+  <header>
+    <img src="../assets/Img/logo.png" class="logo" alt="Logo">
+    <input type="text" placeholder="Buscar...">
+    <div class="icons">
+      <span>👤</span>
+      <span>🐾</span>
+      <span>🛒</span>
+    </div>
+  </header>
+
+  <div class="tabs">
+   <button class="tab-btn active" data-tab="andamento" onclick="showTab('andamento')">Em Andamento</button>
+  <button class="tab-btn" data-tab="concluidos" onclick="showTab('concluidos')">Concluídos</button>
+  <button class="tab-btn" data-tab="cancelados" onclick="showTab('cancelados')">Cancelados</button>
+  </div>
+
+  <div class="tab-content" id="andamento">
+    <div class="product-card">
+      <div class="image"></div>
+      <div>
+        <h2>nome do produto</h2>
+        <p class="price">$59,90</p>
+        <p class="desc">Dia de chegada e a Descrição ...</p>
+        <p>Avaliação: 4.6<br>5 produtos vendidos</p>
+        <p class="estoque">35 produtos em estoque</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="image"></div>
+      <div>
+        <h2>nome do produto</h2>
+        <p class="price">$29,90</p>
+        <p class="desc">Dia de chegada e a Descrição ...</p>
+        <p>Avaliação: 4.6<br>20 produtos vendidos</p>
+        <p class="estoque">100 produtos em estoque</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="concluidos" style="display: none;">
+    <div class="product-card">
+      <div class="image"></div>
+      <div>
+        <h2>nome do produto</h2>
+        <p class="price">$59,90</p>
+        <p class="desc">Entrega Concluída e a Descrição ...</p>
+        <p>Avaliação: 4.6<br>5 produtos vendidos</p>
+        <p class="estoque">35 produtos em estoque</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="cancelados" style="display: none;">
+    <div class="product-card">
+      <div class="image"></div>
+      <div>
+        <h2>nome do produto</h2>
+        <p class="price">$19,90</p>
+        <p class="desc">Cancelado e a Descrição ...</p>
+        <p>Avaliação: 2.6<br>0 produtos vendidos</p>
+        <p class="estoque">30 produtos em estoque</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../scripts/meusPedidso.js"></script>
+</body>
+</html>
