@@ -1,10 +1,32 @@
+document.getElementById('profileBtn').addEventListener('click', () => {
+    const dropdown = document.getElementById('dropdownMenu');
+    dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+
+});
+
+document.addEventListener('click', (event) => {
+    const dropdown = document.getElementById('dropdownMenu');
+    const profileBtn = document.getElementById('profileBtn');
+        if (!dropdown.contains(event.target) && !profileBtn.contains(event.target)) {
+    }
+});
+
+document.getElementById('cartBtn').addEventListener('click', () => {
+    window.location.href = 'carrinho.html';
+});
+
+document.getElementById("meusPedidosLink").addEventListener("click", function() {
+    window.location.href = "meusPedidos.html";  // Caminho da sua tela de pedidos
+
+});
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const produtosGrid = document.querySelector('.produtos-home-grid');
     const searchInput = document.getElementById('searchInput');
     const searchButton = document.getElementById('searchButton');
     const categoryElements = document.querySelectorAll('.category');
     const apiUrl = 'http://localhost:3000/api/produtos';
-    // const loginPageUrl = '/ClienteouAdministrador.html'; // Esta variável não está sendo usada
 
     // Função para buscar e exibir os produtos
     async function fetchAndDisplayProducts(filterType = 'all', searchTerm = '') {
@@ -42,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button class="btn-comprar">Comprar</button>
                 `;
 
-                // ADICIONE ESTA PARTE PARA SALVAR O PRODUTO
                 const comprarButton = productCard.querySelector('.btn-comprar');
                 comprarButton.addEventListener('click', () => {
                     // Salva o objeto produto completo no localStorage
@@ -50,19 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Redireciona para a página de descrição do produto
                     window.location.href = "descricaoProduto.html";
                 });
-                // FIM DA PARTE A SER ADICIONADA
+             
 
                 produtosGrid.appendChild(productCard);
             });
 
-            // REMOVA ESTE BLOCO DE CÓDIGO DUPLICADO E INCORRETO
-            /*
-            document.querySelectorAll('.btn-comprar').forEach(button => {
-                button.addEventListener('click', () => {
-                    window.location.href = "descricaoProduto.html";
-                });
-            });
-            */
 
         } catch (error) {
             console.error('Erro ao buscar produtos:', error);
@@ -70,19 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // REMOVA OU COMENTE ESTE BLOCO, POIS ELE TENTA ACESSAR 'produtos' que não está no escopo global
-    /*
-    document.querySelectorAll('.btn-comprar').forEach((button, index) => {
-        const produto = produtos[index]; // 'produtos' não está acessível aqui
-        button.addEventListener('click', () => {
-            if (produto.estoque <= 0) {
-                alert(`Desculpe, o produto "${produto.nome}" está esgotado e não pode ser adicionado ao carrinho.`);
-                return;
-            }
-            window.location.href = "descricaoProduto.html";
-        });
-    });
-    */
 
     // Carrega todos os produtos na pagina
     fetchAndDisplayProducts('all');
