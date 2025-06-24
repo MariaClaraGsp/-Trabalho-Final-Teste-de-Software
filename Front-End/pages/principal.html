@@ -12,10 +12,10 @@
       <div class="logo">
         <img src="../assets/img/logo.png" alt="Logo Pet Shop" />
       </div>
- <div class="search-bar">
-      <input type="text" placeholder="Buscar...">
-      <button>🔍</button>
-    </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar..." id="searchInput">
+        <button id="searchButton">🔍</button>
+      </div>
 
       <div class="icons">
         <button class="icon-button" id="profileBtn" aria-label="Perfil">👤</button>
@@ -33,51 +33,47 @@
         <li>Configuração</li>
         <li>Tema</li>
         <li>Meus Dados</li>
-        <li id="meusPedidosLink">Meus Pedidos</li>
+         <li id="meusPedidosLink">Meus Pedidos</li>
         <li>Endereço</li>
         <li>Avaliar produtos</li>
       </ul>
-      <div class="logout">Sair</div>
+      <div  class="logout">Sair</div>
     </div>
   </header>
 
   <main>
     <section class="categories">
-  <div class="category">
-    <div class="icon">🍖</div>
-    <span>Alimentação</span>
-  </div>
-  <div class="category">
-    <div class="icon">💊</div>
-    <span>Medicamentos</span>
-  </div>
-  <div class="category">
-    <div class="icon">🧼</div>
-    <span>Higiene</span>
-  </div>
-  <div class="category">
-    <div class="icon">🧸</div>
-    <span>Brinquedos</span>
-  </div>
-  <div class="category">
-    <div class="icon">🎀</div>
-    <span>Acessórios</span>
-  </div>
-</section>
+      <div class="category" data-category="Alimentação">
+        <div class="icon">🍖</div>
+        <span>Alimentação</span>
+      </div>
+      <div class="category" data-category="Medicamentos">
+        <div class="icon">💊</div>
+        <span>Medicamentos</span>
+      </div>
+      <div class="category" data-category="Higiene">
+        <div class="icon">🧼</div>
+        <span>Higiene</span>
+      </div>
+      <div class="category" data-category="Brinquedos">
+        <div class="icon">🧸</div>
+        <span>Brinquedos</span>
+      </div>
+      <div class="category" data-category="Acessórios">
+        <div class="icon">🎀</div>
+        <span>Acessórios</span>
+      </div>
+    </section>
 
     <section class="highlight">
       <p>Entrega Concluída e a Descrição</p>
     </section>
 
-    <section class="most-ordered">
-      <h2>Mais pedidos</h2>
-      <div class="product-list">
-        <div class="product"></div>
-        <div class="product"></div>
-        <div class="product"></div>
-        <div class="product"></div>
-      </div>
-    </section>
+   <section class="most-ordered">
+ <h2>Produtos Disponíveis</h2>
+ <div class="produtos-home-grid">
+   </div>
+</section>
   </main>
 
   <script src="../scripts/principaljs.js"></script>

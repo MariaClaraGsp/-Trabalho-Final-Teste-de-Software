@@ -18,9 +18,8 @@ header {
 }
 
 .logo img {
-  height: 40px; 
+  height: 40px;
 }
-
 
 .search-bar {
   flex-grow: 1;
@@ -48,7 +47,6 @@ header {
   align-items: center;
   gap: 10px;
 }
-
 
 .dropdown {
   position: absolute;
@@ -121,7 +119,6 @@ header {
   margin-bottom: 8px;
 }
 
-
 .highlight {
   background-color: #ccc;
   height: 150px;
@@ -142,21 +139,78 @@ header {
   color: #00acc1;
 }
 
-.product-list {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 15px;
-  padding: 10px;
+/* START - Novas regras para produtos substituindo as antigas .product-list e .product */
+.produtos-home-grid {
+  display: grid;
+  /* Mantido auto-fill conforme sua última solicitação para preenchimento */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  padding: 0 20px;
 }
 
-.product {
-  width: 150px;
-  height: 150px;
-  background-color: #ddd;
+.product-card {
+  background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 280px;
+  justify-content: space-between;
 }
+
+.product-card .imagem-produto {
+  width: 100%;
+  height: 120px;
+  background-color: #eee;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.product-card .nome-produto {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  /* Adicionado para lidar com nomes de produtos longos */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.product-card .valor-produto {
+  color: #f6a623; /* Usando a cor que você especificou para o preço */
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.product-card .estoque-produto {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.product-card .btn-comprar {
+  background-color: #00a8cc; /* Usando a cor que você especificou para o botão */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.product-card .btn-comprar:hover {
+  background-color: #008cba; /* Usando a cor de hover que você especificou */
+}
+/* END - Novas regras para produtos */
 
 .icon-button {
   background-color: transparent;
@@ -167,8 +221,9 @@ header {
   margin: 0 4px;
   border-radius: 50%;
   transition: background-color 0.2s ease;
+  color: #fff; /* Adicionei cor branca para os ícones no header laranja */
 }
 
 .icon-button:hover {
-  background-color: rgba(0, 0, 0, 0.1); 
+  background-color: rgba(255, 255, 255, 0.1);
 }
