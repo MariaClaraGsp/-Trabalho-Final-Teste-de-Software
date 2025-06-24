@@ -14,3 +14,6 @@ document.addEventListener('click', (event) => {
 document.getElementById('cartBtn').addEventListener('click', () => {
   window.location.href = 'carrinho.html';
 });
+document.getElementById("meusPedidosLink").addEventListener("click", function() {
+  window.location.href = "../pages/meusPedidos.html";  // Caminho da sua tela de pedidos
+});
