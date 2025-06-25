@@ -16,12 +16,12 @@ document.getElementById('cartBtn').addEventListener('click', () => {
 });
 
 document.getElementById("meusPedidosLink").addEventListener("click", function() {
-    window.location.href = "meusPedidos.html";  // Caminho da sua tela de pedidos
+    window.location.href = "meusPedidos.html";  
 
 });
 
 document.getElementById("meusDadosLink").addEventListener("click", function() {
-    window.location.href = "meusDados.html";  // Caminho da sua tela de pedidos
+    window.location.href = "meusDados.html";  
 
 });
 

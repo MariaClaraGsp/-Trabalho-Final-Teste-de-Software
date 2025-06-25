@@ -15,7 +15,7 @@ const frontEndPath = path.join(__dirname, '..', '..', 'Front-End');
 const pagesPath = path.join(frontEndPath, 'pages');
 const stylesPath = path.join(frontEndPath, 'styles');
 const assetsPath = path.join(frontEndPath, 'assets');
-const scriptsPath = path.join(frontEndPath, 'scripts');  // <-- ✅ Adicionado!
+const scriptsPath = path.join(frontEndPath, 'scripts');  
 
 // Middlewares
 app.use(cors());

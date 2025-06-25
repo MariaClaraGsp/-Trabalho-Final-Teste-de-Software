@@ -7,10 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Atualiza a imagem do produto (usa imagem padrão se não houver)
-   /* const imagemEl = document.querySelector('.produto-imagem img');
-    imagemEl.src = produto.imagem || '/Front-End/assets/Img/produto-padrao.png';
-    imagemEl.alt = produto.nome;*/
 
     // Atualiza nome
     document.querySelector('.produto-info h2').textContent = produto.nome;

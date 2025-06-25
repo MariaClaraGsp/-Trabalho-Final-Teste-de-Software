@@ -6,7 +6,7 @@ function showTab(tabId) {
   // Exibir a aba selecionada
   document.getElementById(tabId).style.display = "block";
 
-  // Remover 'active' de todos os botões
+
   const buttons = document.querySelectorAll(".tab-btn");
   buttons.forEach(btn => btn.classList.remove("active"));
 
