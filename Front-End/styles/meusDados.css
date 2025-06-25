@@ -1,0 +1,134 @@
+/* Estilo global */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.search-bar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 20px;
+}
+
+.search-bar input {
+  padding: 8px;
+  width: 200px;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.dropdown {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  position: absolute;
+  right: 20px;
+  top: 70px;
+  width: 200px;
+  display: none;
+}
+
+.dropdown-search input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown ul li {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.logout {
+  color: red;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Formulário */
+main.meus-dados {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main.meus-dados form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+main.meus-dados label {
+  font-weight: bold;
+}
+
+main.meus-dados input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions a {
+  color: #007BFF;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button[type="submit"],
+button[type="button"] {
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "c875cb35-b309-4449-a931-e71c2b810085",
+		"name": "PataSoft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45809260",
+		"_collection_link": "https://alice-7278849.postman.co/workspace/Alice's-Workspace~125ca4a7-9902-4b1b-84bf-a52a2d971d99/collection/45809260-c875cb35-b309-4449-a931-e71c2b810085?action=share&source=collection_link&creator=45809260"
+	},
+	"item": [
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Ração para Cães Adultos\",\r\n  \"valor\": 75,\r\n  \"descricao\": \"Ração premium para cães adultos de raças médias e grandes.\",\r\n  \"categoria\": \"Alimentação\",\r\n  \"estoque\": 150\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}api/produtos/",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"produtos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar produtos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}api/produtos",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listagem categoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}api/produtos/categoria/Medicamentos",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"produtos",
+								"categoria",
+								"Medicamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listagem nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}api/produtos/nome/Pata",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"produtos",
+								"nome",
+								"Pata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listagem Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}api/produtos/id/8",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"produtos",
+								"id",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}api/produtos/8",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"produtos",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Ração para Cães\",\r\n  \"valor\": 75,\r\n  \"descricao\": \"Ração premium para cães adultos de raças médias e grandes.\",\r\n  \"categoria\": \"Alimentação\",\r\n  \"estoque\": 150\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}api/produtos/13",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"produtos",
+								"13"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Listar Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}api/clientes/",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"clientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"nome\": \"Carlos Souza\",\r\n    \"cpf\": \"14587965894\",\r\n    \"email\": \"carlossouza@example.com\",\r\n    \"senha\": \"Carlossz9.\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}api/clientes/",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"clientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"nome\": \"Carlos\",\r\n    \"email\": \"carlossouza@example.com\",\r\n    \"senha\": \"Carlossz..9\"\r\n  }"
+						},
+						"url": {
+							"raw": "{{baseURL}}api/clientes/10987654321",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"clientes",
+								"10987654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"nome\": \"Carlos jesus amem\",\r\n    \"email\": \"carlossouza@example.com\",\r\n    \"senha\": \"Carlossz..9\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}api/clientes/14587965894",
+							"host": [
+								"{{baseURL}}api"
+							],
+							"path": [
+								"clientes",
+								"14587965894"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"douglas@gmail.com\",\r\n    \"senha\": \"123456Al.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}api/login/",
+					"host": [
+						"{{baseURL}}api"
+					],
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

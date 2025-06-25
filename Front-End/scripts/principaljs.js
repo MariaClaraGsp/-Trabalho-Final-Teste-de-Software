@@ -20,6 +20,11 @@ document.getElementById("meusPedidosLink").addEventListener("click", function() 
 
 });
 
+document.getElementById("meusDadosLink").addEventListener("click", function() {
+    window.location.href = "meusDados.html";  // Caminho da sua tela de pedidos
+
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const produtosGrid = document.querySelector('.produtos-home-grid');

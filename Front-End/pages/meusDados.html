@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meus Dados</title>
+  <link rel="stylesheet" href="../styles/meusDados.css" />
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="../assets/img/logo.png" alt="Logo Pet Shop" />
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar...">
+        <button>🔍</button>
+      </div>
+      <div class="icons">
+        <button class="icon-button" id="profileBtn">👤</button>
+        <button class="icon-button" id="loyaltyBtn">🐾</button>
+        <button class="icon-button" id="cartBtn">🛒</button>
+      </div>
+    </div>
+
+    <div class="dropdown" id="dropdownMenu">
+      <div class="dropdown-search">
+        <input type="text" placeholder="Buscar..." />
+        <span class="icon">🔍</span>
+      </div>
+      <ul>
+        <li>Configuração</li>
+        <li>Tema</li>
+        <li>Meus Dados</li>
+        <li id="meusPedidosLink">Meus Pedidos</li>
+        <li>Endereço</li>
+        <li>Avaliar produtos</li>
+      </ul>
+      <div class="logout" onclick="logout()">Sair</div>
+    </div>
+  </header>
+
+  <main class="meus-dados">
+    <h2>Meus Dados</h2>
+    <form id="formMeusDados">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" disabled />
+
+      <label for="cpf">CPF</label>
+      <input type="text" id="cpf" name="cpf" disabled />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" disabled />
+
+      <div class="actions">
+        <a id="editarBtn">Alterar seus dados</a>
+        <a id="deletarBtn" style="color: red;">Excluir conta</a>
+      </div>
+
+      <button type="submit" id="salvarBtn" style="display: none;">Salvar alterações</button>
+    </form>
+  </main>
+    <script src="../scripts/meusDados.js"></script>
+    
+  </body>

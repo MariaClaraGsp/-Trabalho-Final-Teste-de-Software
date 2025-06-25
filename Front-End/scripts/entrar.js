@@ -24,6 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const { status, data } = await fazerLogin(email, senha);
 
       if (status && data.sucesso) {
+      
+        if (data.usuario && data.usuario.id) {
+          localStorage.setItem('id', data.usuario.id); // Salva o ID do usuário no localStorage
+        } else {
+          console.warn("ID do usuário não encontrado na resposta de login.");
+          // Você pode adicionar um alerta ao usuário aqui se o ID for crítico para o fluxo
+        }
+  
+
         alert("Login bem-sucedido! Bem-vindo, " + data.usuario.nome);
         window.location.href = "/principal.html";
       } else {
